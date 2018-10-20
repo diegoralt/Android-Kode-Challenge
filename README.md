@@ -21,3 +21,6 @@ etc...
 3) Pruebas de concepto con usuario
 
 4) Mejoras de maquetado
+
+5) Desarrollo de la solución
+    - Se crea proyecto Android - 20 de Octubre 12:34 AM
