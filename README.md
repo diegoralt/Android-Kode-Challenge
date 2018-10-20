@@ -26,3 +26,4 @@ etc...
 
 5) Desarrollo de la solución
     - Se crea proyecto Android - 20 de Octubre 12:34 AM
+    - Se crean clases para consumo de servicios - 20 de Octubre 2:42 AM
