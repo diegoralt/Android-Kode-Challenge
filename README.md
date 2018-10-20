@@ -16,13 +16,28 @@ etc...
     - Maquetado en papel - 19 de Octubre 23:53 PM: 
     
         Las imagenes se encuentran en la carpeta "Maquetado en papel"
-    - Proyecto Invision - 20 de Octubre 12:22 AM: 
+    - Proyecto InVision - 20 de Octubre 12:22 AM: 
     
-        El link de proyecto es https://invis.io/8DOOR96WY4R
+        El link de proyecto es https://invis.io/8DOOR96WY4R, el flujo inici en la imagen Pantalla Principal
 
-3) Pruebas de concepto con usuario
+3) Pruebas de concepto con usuario - 20 de Octubre 1:27 PM
 
-4) Mejoras de maquetado
+    Perfil del usuario:
+    Araceli Gutierrez
+    Ama de casa con 2 hijos
+    No tiene tanto conocimiento tecnologico
+
+    Se le explico las funciones que tenia la solución, al principio no le encontraba un uso sin embargo con forme se le explicaban algunos temas fue dando sugerencias como que se agregaran dispositivos wifi ya que ella ha oido más usos para dispositivos que manejan esa tecnologia.
+
+    AL final menciona que la solución se le hace parecida a la búsqueda de bluetooth que se tiene en el apartado de configuraciones de los celulares.
+
+4) Mejoras en maquetado
+    - Mejoras en maqueta de papel - 20 de Octubre 4:13 PM:
+
+        Las imagenes se encuentran en la carpeta "Mejora en maquetado"
+    - Proyecto InVision - 20 de Octubre 5:40 PM
+
+        El link de proyecto es https://invis.io/8DOOR96WY4R, el flujo inici en la imagen Principal Mejora
 
 5) Desarrollo de la solución
     - Se crea proyecto Android - 20 de Octubre 12:34 AM
