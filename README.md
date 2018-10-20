@@ -14,7 +14,9 @@ etc...
 
 2) Maquetado de la solución
     - Maquetado en papel - 19 de Octubre 23:53 PM
-    - Proyecto Invision
+    Las imagenes se guardan en la carpeta "Maquetado en papel"
+    - Proyecto Invision - 20 de Octubre 12:22 AM
+    El link de proyecto es https://invis.io/8DOOR96WY4R
 
 3) Pruebas de concepto con usuario
 
