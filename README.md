@@ -13,10 +13,10 @@
 etc...
 
 2) Maquetado de la solución
-    - Maquetado en papel - 19 de Octubre 23:53 PM: 
+    - Maquetado en papel - 19 de Octubre 23:53 PM 
     
         Las imagenes se encuentran en la carpeta "Maquetado en papel"
-    - Proyecto InVision - 20 de Octubre 12:22 AM: 
+    - Proyecto InVision - 20 de Octubre 12:22 AM 
     
         El link de proyecto es https://invis.io/8DOOR96WY4R, el flujo inici en la imagen Pantalla Principal
 
@@ -32,7 +32,7 @@ etc...
     AL final menciona que la solución se le hace parecida a la búsqueda de bluetooth que se tiene en el apartado de configuraciones de los celulares.
 
 4) Mejoras en maquetado
-    - Mejoras en maqueta de papel - 20 de Octubre 4:13 PM:
+    - Mejoras en maqueta de papel - 20 de Octubre 4:13 PM
 
         Las imagenes se encuentran en la carpeta "Mejora en maquetado"
     - Proyecto InVision - 20 de Octubre 5:40 PM
@@ -42,7 +42,7 @@ etc...
 5) Desarrollo de la solución
     - Se crea proyecto Android - 20 de Octubre 12:34 AM
     - Se crean clases para consumo de servicios - 20 de Octubre 2:42 AM
-    - Implementación de arquitectura MVVM - 
-        1. Se crean los paquetes model, views y viewmodels.
-        2. Se agrega la clase Device en el paquete model con sus atributos y reglas de negocio.
-        2.1. Se agrega Test para regla de negocio.
+    - Implementación de arquitectura MVVM
+        1. Se crean los paquetes model, views y viewmodels - 20 de Octubre 9:15 PM
+        2. Se agrega la clase Device en el paquete model con sus atributos y reglas de negocio - 20 de Octubre 10:10 PM
+        2.1. Se agrega Test para regla de negocio - 20 de Octubre 10:11 PM
