@@ -6,7 +6,6 @@ import com.challenge.diego.kode_challenge.utils.PrintConsole;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
 
@@ -22,8 +21,9 @@ public class Device {
     @NonNull
     private String mDateCreation;
 
-    public Device() {
-
+    public Device(@NonNull final String name, @NonNull final String strength) {
+        setmName(name);
+        setmStrength(strength);
     }
 
     public Device(@NonNull final String name, @NonNull final String strength, @NonNull final  String dateCreation) {

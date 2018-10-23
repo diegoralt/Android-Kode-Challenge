@@ -42,7 +42,8 @@ etc...
 5) Desarrollo de la solución
     - Se crea proyecto Android - 20 de Octubre 12:34 AM
     - Se crean clases para consumo de servicios - 20 de Octubre 2:42 AM
-    - Implementación de arquitectura MVVM
-        1. Se crean los paquetes model, views y viewmodels - 20 de Octubre 9:15 PM
+    - Implementación de arquitectura MVP
+        1. Se crean los paquetes model, views - 20 de Octubre 9:15 PM
         2. Se agrega la clase Device en el paquete model con sus atributos y reglas de negocio - 20 de Octubre 10:10 PM
         2.1. Se agrega Test para regla de negocio - 20 de Octubre 10:11 PM
+        3. Se implementa la comunicación Vista-Presentador para buscar dispositivos bluetooth - 23 de Octubre 11:45 AM
