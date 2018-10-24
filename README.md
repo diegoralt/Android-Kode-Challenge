@@ -47,3 +47,4 @@ etc...
         2. Se agrega la clase Device en el paquete model con sus atributos y reglas de negocio - 20 de Octubre 10:10 PM
         2.1. Se agrega Test para regla de negocio - 20 de Octubre 10:11 PM
         3. Se implementa la comunicación Vista-Presentador para buscar dispositivos bluetooth - 23 de Octubre 11:45 AM
+        4. Se implementa la comunicación Vista-Presentadr para adapter que nos ayuda a mostrar los dispositivos de una lista - 24 de Octubre 10:06 AM

@@ -19,7 +19,8 @@ import java.util.ArrayList;
  * Created by diego on 10/23/18.
  */
 
-public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DevicesViewHolder> {
+public class DeviceAdapterView extends RecyclerView.Adapter<DeviceAdapterView.DevicesViewHolder> implements DeviceAdapterContract.View {
+    private DeviceAdapterPresenter presenter = new DeviceAdapterPresenter(this);
     private ArrayList<Device> list;
     private Context context;
 
@@ -38,12 +39,6 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DevicesVie
         holder.txt_name.setText(device.getmName());
         String strength = "Intensidad: " + device.getmStrength();
         holder.txt_strength.setText(strength);
-
-        if (!TextUtils.isEmpty(device.getmDateCreation())) {
-            holder.txt_date.setVisibility(View.VISIBLE);
-            String date = "Se dio de alta el " + device.getmDateCreation();
-            holder.txt_date.setText(date);
-        }
     }
 
     @Override
@@ -51,9 +46,20 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DevicesVie
         return list.size();
     }
 
+    @Override
+    public void isShowViews(boolean isShowDate, TextView txt_date, Button btn_save) {
+        if (isShowDate) {
+            txt_date.setVisibility(View.VISIBLE);
+            btn_save.setVisibility(View.GONE);
+        } else {
+            btn_save.setVisibility(View.VISIBLE);
+            txt_date.setVisibility(View.GONE);
+        }
+    }
+
     class DevicesViewHolder extends RecyclerView.ViewHolder {
-        private TextView txt_name, txt_strength, txt_date;
-        private Button btn_save;
+        TextView txt_name, txt_strength, txt_date;
+        Button btn_save;
 
         DevicesViewHolder(View itemView) {
             super(itemView);
@@ -63,10 +69,11 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DevicesVie
             txt_date = itemView.findViewById(R.id.txt_label_date);
 
             btn_save = itemView.findViewById(R.id.btn_save);
+            presenter.checkFlow(txt_date, btn_save);
         }
     }
 
-    public DeviceAdapter(ArrayList<Device> list) {
+    public DeviceAdapterView(ArrayList<Device> list) {
         this.list = list;
     }
 }

@@ -9,8 +9,9 @@ import android.content.IntentFilter;
 import android.os.AsyncTask;
 
 import com.challenge.diego.kode_challenge.model.Device;
+import com.challenge.diego.kode_challenge.session.Session;
 import com.challenge.diego.kode_challenge.utils.PrintConsole;
-import com.challenge.diego.kode_challenge.views.item_adapter.DeviceAdapter;
+import com.challenge.diego.kode_challenge.views.item_adapter.DeviceAdapterView;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 
 public class SearchDevicePresenter implements SearchDeviceContract.Presenter {
     private SearchDeviceView view;
+    private Session session = Session.getInstance();
 
     private BluetoothAdapter mBTAdapter;
     static int REQUEST_BLUETOOTH = 1;
@@ -27,6 +29,7 @@ public class SearchDevicePresenter implements SearchDeviceContract.Presenter {
 
     SearchDevicePresenter(SearchDeviceView view) {
         this.view = view;
+        session.setCurrentWindow(1);
     }
 
     @Override
@@ -36,8 +39,7 @@ public class SearchDevicePresenter implements SearchDeviceContract.Presenter {
         if (mBTAdapter == null)
             view.infoNotSupportBluetooth();
         else if (!mBTAdapter.isEnabled()) {
-            Intent i = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            view.startActivityForResult(i, REQUEST_BLUETOOTH);
+            turnOnBluetooth();
         } else {
             clickActualizar();
         }
@@ -51,6 +53,12 @@ public class SearchDevicePresenter implements SearchDeviceContract.Presenter {
     @Override
     public void clickVerMas() {
 
+    }
+
+    @Override
+    public void turnOnBluetooth() {
+        Intent i = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+        view.startActivityForResult(i, REQUEST_BLUETOOTH);
     }
 
     private final BroadcastReceiver bReceiver = new BroadcastReceiver() {
@@ -98,7 +106,7 @@ public class SearchDevicePresenter implements SearchDeviceContract.Presenter {
             if (listDevice.isEmpty())
                 view.showNotFound();
             else {
-                DeviceAdapter adapter = new DeviceAdapter(listDevice);
+                DeviceAdapterView adapter = new DeviceAdapterView(listDevice);
                 view.showDevides(adapter);
             }
         }

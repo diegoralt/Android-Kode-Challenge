@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.challenge.diego.kode_challenge.R;
 import com.challenge.diego.kode_challenge.views.BaseActivity;
-import com.challenge.diego.kode_challenge.views.item_adapter.DeviceAdapter;
+import com.challenge.diego.kode_challenge.views.item_adapter.DeviceAdapterView;
 
 /**
  * Created by diego on 10/23/18.
@@ -31,6 +31,7 @@ public class SearchDeviceView extends BaseActivity implements SearchDeviceContra
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.device_serch_activity);
+        setCurrentActivity(this);
 
         linkUI();
         setListener();
@@ -49,7 +50,7 @@ public class SearchDeviceView extends BaseActivity implements SearchDeviceContra
         btn_actualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.clickActualizar();
+                presenter.checkStateBluetooth();
             }
         });
 
@@ -87,7 +88,7 @@ public class SearchDeviceView extends BaseActivity implements SearchDeviceContra
     }
 
     @Override
-    public void showDevides(DeviceAdapter mAdapter) {
+    public void showDevides(DeviceAdapterView mAdapter) {
         activateBtn();
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
@@ -115,7 +116,7 @@ public class SearchDeviceView extends BaseActivity implements SearchDeviceContra
                 .setMessage("Es necesario que actives tu bluetooth")
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        presenter.clickActualizar();
+                        presenter.turnOnBluetooth();
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -124,7 +125,7 @@ public class SearchDeviceView extends BaseActivity implements SearchDeviceContra
                         finish();
                     }
                 })
-                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setIcon(R.drawable.ic_alert)
                 .setCancelable(false)
                 .show();
     }
