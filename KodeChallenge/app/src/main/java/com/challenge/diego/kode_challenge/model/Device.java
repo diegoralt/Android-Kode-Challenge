@@ -20,6 +20,8 @@ public class Device {
     private String mStrength;
     @NonNull
     private String mDateCreation;
+    @NonNull
+    private long mTime;
 
     public Device(@NonNull final String name, @NonNull final String strength) {
         setmName(name);
@@ -30,6 +32,7 @@ public class Device {
         setmName(name);
         setmStrength(strength);
         setmDateCreation(dateFormatter(dateCreation));
+        setmTime(getTime(dateCreation));
     }
 
     @NonNull
@@ -59,7 +62,16 @@ public class Device {
         this.mDateCreation = dateCreation;
     }
 
-    public String dateFormatter(String dateCreation) {
+    @NonNull
+    public long getmTime() {
+        return mTime;
+    }
+
+    public void setmTime(@NonNull long mTime) {
+        this.mTime = mTime;
+    }
+
+    public static String dateFormatter(String dateCreation) {
         String formattedDate = "";
         try {
             Locale locale = new Locale("es", "MX");
@@ -71,5 +83,18 @@ public class Device {
             PrintConsole.e("ParseException - dateFormatter", e.getMessage());
         }
         return formattedDate;
+    }
+
+    public long getTime(String dateCreation) {
+        long l = 0;
+        try {
+            Locale locale = new Locale("es", "MX");
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss'Z'", locale);
+            Date date = inputFormat.parse(dateCreation);
+            l = date.getTime();
+        } catch (ParseException e) {
+            PrintConsole.e("ParseException - dateFormatter", e.getMessage());
+        }
+        return l;
     }
 }

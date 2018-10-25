@@ -8,7 +8,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 
+import com.challenge.diego.kode_challenge.commons.Constants;
 import com.challenge.diego.kode_challenge.model.Device;
+import com.challenge.diego.kode_challenge.services.Server;
 import com.challenge.diego.kode_challenge.session.Session;
 import com.challenge.diego.kode_challenge.utils.PrintConsole;
 import com.challenge.diego.kode_challenge.views.item_adapter.DeviceAdapterView;
@@ -52,7 +54,8 @@ public class SearchDevicePresenter implements SearchDeviceContract.Presenter {
 
     @Override
     public void clickVerMas() {
-
+        session.setCurrentWindow(2);
+        Server.getInstance(view).doNetworkOperation(Constants.OPERATION.getDevices, null);
     }
 
     @Override

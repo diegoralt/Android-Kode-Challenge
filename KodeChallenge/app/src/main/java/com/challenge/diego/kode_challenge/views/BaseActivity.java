@@ -2,11 +2,14 @@ package com.challenge.diego.kode_challenge.views;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 import com.challenge.diego.kode_challenge.R;
 import com.challenge.diego.kode_challenge.utils.PrintConsole;
+import com.challenge.diego.kode_challenge.views.more_device.MoreDeviceView;
+import com.challenge.diego.kode_challenge.views.search_device.SearchDeviceView;
 
 /**
  * Created by diego on 10/23/18.
@@ -18,6 +21,21 @@ public class BaseActivity extends AppCompatActivity {
 
     public void setCurrentActivity(BaseActivity currentActivity) {
         this.currentActivity = currentActivity;
+    }
+
+    public void showScreen(int id) {
+        Class<?> activity = null;
+        switch (id) {
+            case 1:
+                activity = SearchDeviceView.class;
+                break;
+            case 2:
+                activity = MoreDeviceView.class;
+                break;
+        }
+        Intent intent = new Intent(currentActivity, activity);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        currentActivity.startActivity(intent);
     }
 
     public void muestraIndicadorActividad(String strTitle, String strMessage) {
@@ -46,10 +64,10 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
-    public void alertSimple(String msg) {
-        new AlertDialog.Builder(this)
-                .setTitle("Aviso")
-                .setMessage("Es necesario que actives tu bluetooth")
+    public void alertSimple(String title, String msg) {
+        new AlertDialog.Builder(currentActivity)
+                .setTitle(title)
+                .setMessage(msg)
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();

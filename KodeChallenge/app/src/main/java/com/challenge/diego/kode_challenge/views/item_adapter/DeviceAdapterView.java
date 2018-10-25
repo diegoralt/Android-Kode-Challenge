@@ -34,11 +34,13 @@ public class DeviceAdapterView extends RecyclerView.Adapter<DeviceAdapterView.De
 
     @Override
     public void onBindViewHolder(@NonNull DevicesViewHolder holder, int position) {
-        Device device = list.get(position);
+        holder.device = list.get(position);
 
-        holder.txt_name.setText(device.getmName());
-        String strength = "Intensidad: " + device.getmStrength();
+        holder.txt_name.setText(holder.device.getmName());
+        String strength = "Intensidad: " + holder.device.getmStrength();
         holder.txt_strength.setText(strength);
+        String date = TextUtils.isEmpty(holder.device.getmDateCreation()) ? "" : "Creado: " + holder.device.getmDateCreation();
+        holder.txt_date.setText(date);
     }
 
     @Override
@@ -57,9 +59,10 @@ public class DeviceAdapterView extends RecyclerView.Adapter<DeviceAdapterView.De
         }
     }
 
-    class DevicesViewHolder extends RecyclerView.ViewHolder {
-        TextView txt_name, txt_strength, txt_date;
-        Button btn_save;
+    class DevicesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private TextView txt_name, txt_strength, txt_date;
+        private Button btn_save;
+        private Device device;
 
         DevicesViewHolder(View itemView) {
             super(itemView);
@@ -69,7 +72,13 @@ public class DeviceAdapterView extends RecyclerView.Adapter<DeviceAdapterView.De
             txt_date = itemView.findViewById(R.id.txt_label_date);
 
             btn_save = itemView.findViewById(R.id.btn_save);
+            btn_save.setOnClickListener(this);
             presenter.checkFlow(txt_date, btn_save);
+        }
+
+        @Override
+        public void onClick(View view) {
+            presenter.clickSave(context, device);
         }
     }
 

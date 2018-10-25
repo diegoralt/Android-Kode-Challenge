@@ -3,7 +3,7 @@
 
 ### Pasos de implementación
 
-1) Investigación - 19 de Octubre 10:27 PM
+1) Investigación - 19 de Octubre
 
     Aplicaciones publicadas en _Play Store_
 *   Bluetooth Scanner - Group Scan
@@ -13,14 +13,14 @@
 etc...
 
 2) Maquetado de la solución
-    - Maquetado en papel - 19 de Octubre 23:53 PM 
+    - Maquetado en papel - 19 de Octubre
     
         Las imagenes se encuentran en la carpeta "Maquetado en papel"
-    - Proyecto InVision - 20 de Octubre 12:22 AM 
+    - Proyecto InVision - 20 de Octubre
     
         El link de proyecto es https://invis.io/8DOOR96WY4R, el flujo inici en la imagen Pantalla Principal
 
-3) Pruebas de concepto con usuario - 20 de Octubre 1:27 PM
+3) Pruebas de concepto con usuario - 20 de Octubre
 
     Perfil del usuario:
     Araceli Gutierrez
@@ -32,19 +32,23 @@ etc...
     AL final menciona que la solución se le hace parecida a la búsqueda de bluetooth que se tiene en el apartado de configuraciones de los celulares.
 
 4) Mejoras en maquetado
-    - Mejoras en maqueta de papel - 20 de Octubre 4:13 PM
+    - Mejoras en maqueta de papel - 20 de Octubre
 
         Las imagenes se encuentran en la carpeta "Mejora en maquetado"
-    - Proyecto InVision - 20 de Octubre 5:40 PM
+    - Proyecto InVision - 20 de Octubre
 
         El link de proyecto es https://invis.io/8DOOR96WY4R, el flujo inici en la imagen Principal Mejora
 
 5) Desarrollo de la solución
-    - Se crea proyecto Android - 20 de Octubre 12:34 AM
-    - Se crean clases para consumo de servicios - 20 de Octubre 2:42 AM
+    - Se crea proyecto Android - 20 de Octubre
+    - Se crean clases para consumo de servicios - 20 de Octubre
     - Implementación de arquitectura MVP
-        1. Se crean los paquetes model, views - 20 de Octubre 9:15 PM
-        2. Se agrega la clase Device en el paquete model con sus atributos y reglas de negocio - 20 de Octubre 10:10 PM
-        2.1. Se agrega Test para regla de negocio - 20 de Octubre 10:11 PM
-        3. Se implementa la comunicación Vista-Presentador para buscar dispositivos bluetooth - 23 de Octubre 11:45 AM
-        4. Se implementa la comunicación Vista-Presentadr para adapter que nos ayuda a mostrar los dispositivos de una lista - 24 de Octubre 10:06 AM
+        1. Se crean los paquetes model, views - 20 de Octubre
+        2. Se agrega la clase Device en el paquete model con sus atributos y reglas de negocio - 20 de Octubre
+        2.1. Se agrega Test para regla de negocio - 20 de Octubre
+        3. Se implementa la comunicación Vista-Presentador para buscar dispositivos bluetooth - 23 de Octubre
+        4. Se implementa la comunicación Vista-Presentadr para adapter que nos ayuda a mostrar los dispositivos de una lista - 24 de Octubre
+        5. Se agrega clase Session a la aplicación - 24 de Octubre
+        6. Se implementa desarrollo para guardar dispositivos - 25 de Octubre
+        7. Se implementa desarrollo para obtener dispositivos guardados - 25 de Octubre
+        8. Se implementa desarrollo para ordenar por fechas los dispositivos guardados - 25 de Octubre 

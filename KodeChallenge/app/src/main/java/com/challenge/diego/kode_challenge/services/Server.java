@@ -2,9 +2,13 @@ package com.challenge.diego.kode_challenge.services;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.text.TextUtils;
 
 import com.challenge.diego.kode_challenge.commons.Constants;
+import com.challenge.diego.kode_challenge.model.MainParse;
+import com.challenge.diego.kode_challenge.session.Session;
 import com.challenge.diego.kode_challenge.utils.PrintConsole;
+import com.challenge.diego.kode_challenge.views.BaseActivity;
 
 import java.util.Hashtable;
 
@@ -16,9 +20,10 @@ public class Server {
     private static Server theInstance = null;
 
     private static HttpInvoker httpInvoker;
-    private static Context controller;
+    private static BaseActivity controller;
+    private Session session = Session.getInstance();
 
-    public static Server getInstance(Context controller) {
+    public static Server getInstance(BaseActivity controller) {
         if (theInstance == null)
             createInstance(controller);
 
@@ -29,7 +34,7 @@ public class Server {
         httpInvoker = new HttpInvoker();
     }
 
-    private synchronized static void createInstance(Context controller) {
+    private synchronized static void createInstance(BaseActivity controller) {
         if (theInstance == null)
             theInstance = new Server();
 
@@ -37,6 +42,7 @@ public class Server {
     }
 
     public void doNetworkOperation(Constants.OPERATION operation, Hashtable<String, String> params) {
+        controller.muestraIndicadorActividad("Operación en curso.", "Conectando con servidor remoto.");
         new Operation(operation, params).execute();
     }
 
@@ -51,22 +57,28 @@ public class Server {
 
         @Override
         protected ServerResponse doInBackground(Void... voids) {
-            ServerResponse response = new ServerResponse();
-            response = httpInvoker.operationService(operation, params);
-
-            return response;
+            return httpInvoker.operationService(operation, params);
         }
 
         @Override
         protected void onPostExecute(ServerResponse serverResponse) {
+            controller.ocultaIndicadorActividad();
             if (serverResponse != null) {
                 if (serverResponse.getEstado() == Constants.CODERESPONSE.OK) {
-
+                    new MainParse().initParse(operation, serverResponse.getCadenaRespuesta());
+                    if (Session.getInstance().getCurrentWindow() == 1) {
+                        String msg = "Dispositivo almacenado satisfactoriamente";
+                        String date = TextUtils.isEmpty(session.getDateCreation()) ? msg + "." : msg + " el " + session.getDateCreation();
+                        controller.alertSimple("Exito", date);
+                    } else
+                        controller.showScreen(2);
                 } else {
-                    PrintConsole.e("Consumo fallido", serverResponse.getCadenaRespuesta());
+                    PrintConsole.e("Consumo fallido", "No response");
+                    controller.alertSimple("Aviso","Por el momento el servicio no esta disponible.");
                 }
             } else {
                 PrintConsole.e("Consumo fallido", "Respuesta nula");
+                controller.alertSimple("Aviso","Por el momento el servicio no esta disponible.");
             }
         }
     }
