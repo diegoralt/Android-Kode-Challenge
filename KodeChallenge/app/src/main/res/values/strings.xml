@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Kode-Challenge</string>
+    <string name="string_device_not_found">No se encontraron\ndispositivos</string>
+
+    <string-array name="filter">
+        <item>Ordenar por:</item>
+        <item>Primeros agregados</item>
+        <item>Últimos agregados</item>
+    </string-array>
+</resources>
