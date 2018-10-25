@@ -18,7 +18,7 @@ etc...
         Las imagenes se encuentran en la carpeta "Maquetado en papel"
     - Proyecto InVision - 20 de Octubre
     
-        El link de proyecto es https://invis.io/8DOOR96WY4R, el flujo inici en la imagen Pantalla Principal
+        El link de proyecto es https://projects.invisionapp.com/share/8DOOR96WY4R#/screens/326726835
 
 3) Pruebas de concepto con usuario - 20 de Octubre
 
@@ -37,7 +37,7 @@ etc...
         Las imagenes se encuentran en la carpeta "Mejora en maquetado"
     - Proyecto InVision - 20 de Octubre
 
-        El link de proyecto es https://invis.io/8DOOR96WY4R, el flujo inici en la imagen Principal Mejora
+        El link de proyecto es https://projects.invisionapp.com/share/8DOOR96WY4R#/screens/326752760
 
 5) Desarrollo de la solución
     - Se crea proyecto Android - 20 de Octubre
