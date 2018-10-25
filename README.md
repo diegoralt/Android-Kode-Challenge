@@ -52,3 +52,4 @@ etc...
         6. Se implementa desarrollo para guardar dispositivos - 25 de Octubre
         7. Se implementa desarrollo para obtener dispositivos guardados - 25 de Octubre
         8. Se implementa desarrollo para ordenar por fechas los dispositivos guardados - 25 de Octubre 
+        9. Última revisión de la implementación antes de realizar el merge a la rama master, se realizan pruebas unitarias - 25 de Octubre

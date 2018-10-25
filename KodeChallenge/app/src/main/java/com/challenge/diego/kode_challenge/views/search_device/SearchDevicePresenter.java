@@ -40,11 +40,10 @@ public class SearchDevicePresenter implements SearchDeviceContract.Presenter {
 
         if (mBTAdapter == null)
             view.infoNotSupportBluetooth();
-        else if (!mBTAdapter.isEnabled()) {
+        else if (!mBTAdapter.isEnabled())
             turnOnBluetooth();
-        } else {
+        else
             clickActualizar();
-        }
     }
 
     @Override
@@ -70,14 +69,13 @@ public class SearchDevicePresenter implements SearchDeviceContract.Presenter {
             String action = intent.getAction();
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                if (device.getName() != null) {
-                    //Obtener intensidad
-                    int rssi = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);
-                    PrintConsole.d("NAME DEVICE", device.getName());
-                    //Crea nuevo dispositivo
-                    Device mDevice = new Device(device.getName(), String.valueOf(rssi));
-                    listDevice.add(mDevice);
-                }
+                String name = device.getName() != null ? device.getName() : device.getAddress();
+                //Obtener intensidad
+                int rssi = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI, Short.MIN_VALUE);
+                PrintConsole.d("NAME DEVICE", name);
+                //Crea nuevo dispositivo
+                Device mDevice = new Device(name, String.valueOf(rssi));
+                listDevice.add(mDevice);
             }
         }
     };

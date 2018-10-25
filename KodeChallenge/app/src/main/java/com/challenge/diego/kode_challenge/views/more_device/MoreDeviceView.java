@@ -36,6 +36,11 @@ public class MoreDeviceView extends BaseActivity implements MoreDeviceContract.V
         presenter.getDevice();
     }
 
+    @Override
+    public void onBackPressed() {
+        presenter.clickBack();
+    }
+
     private void linkUI() {
         Button btn_actualizar = findViewById(R.id.btn_action_actualizar);
         btn_actualizar.setVisibility(View.GONE);

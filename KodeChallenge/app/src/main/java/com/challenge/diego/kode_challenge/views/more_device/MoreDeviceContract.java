@@ -15,5 +15,6 @@ public interface MoreDeviceContract {
     interface Presenter {
         void getDevice();
         void filterDevices(int position);
+        void clickBack();
     }
 }

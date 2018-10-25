@@ -18,6 +18,10 @@ public class ExampleUnitTest {
     }
     @Test
     public void formatter_isCorrect() throws Exception {
-        assertNotNull(new Device().dateFormatter("2018-09-08 00:05:29Z"));
+        assertNotNull(Device.dateFormatter("2018-09-08 00:05:29Z"));
+    }
+    @Test
+    public void covert_time_correct() throws Exception {
+        assertNotEquals(0, new Device().getTime("2018-09-08 00:05:29Z"));
     }
 }

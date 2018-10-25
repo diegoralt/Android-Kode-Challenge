@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 import com.challenge.diego.kode_challenge.R;
+import com.challenge.diego.kode_challenge.commons.Constants;
 import com.challenge.diego.kode_challenge.utils.PrintConsole;
 import com.challenge.diego.kode_challenge.views.more_device.MoreDeviceView;
 import com.challenge.diego.kode_challenge.views.search_device.SearchDeviceView;
@@ -64,7 +65,17 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
-    public void alertSimple(String title, String msg) {
+    public void alertSimple(String title, String msg, Constants.CODERESPONSE code) {
+        int idImg = 0;
+        switch (code) {
+            case OK:
+                idImg = R.drawable.ic_success;
+                break;
+            case ERROR:
+                idImg = R.drawable.ic_alert;
+                break;
+        }
+
         new AlertDialog.Builder(currentActivity)
                 .setTitle(title)
                 .setMessage(msg)
@@ -73,7 +84,7 @@ public class BaseActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 })
-                .setIcon(R.drawable.ic_alert)
+                .setIcon(idImg)
                 .setCancelable(false)
                 .show();
     }

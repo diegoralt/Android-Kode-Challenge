@@ -1,6 +1,5 @@
 package com.challenge.diego.kode_challenge.services;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.text.TextUtils;
 
@@ -69,16 +68,16 @@ public class Server {
                     if (Session.getInstance().getCurrentWindow() == 1) {
                         String msg = "Dispositivo almacenado satisfactoriamente";
                         String date = TextUtils.isEmpty(session.getDateCreation()) ? msg + "." : msg + " el " + session.getDateCreation();
-                        controller.alertSimple("Exito", date);
+                        controller.alertSimple("Exito", date, serverResponse.getEstado());
                     } else
                         controller.showScreen(2);
                 } else {
                     PrintConsole.e("Consumo fallido", "No response");
-                    controller.alertSimple("Aviso","Por el momento el servicio no esta disponible.");
+                    controller.alertSimple("Aviso","Por el momento el servicio no esta disponible.", serverResponse.getEstado());
                 }
             } else {
                 PrintConsole.e("Consumo fallido", "Respuesta nula");
-                controller.alertSimple("Aviso","Por el momento el servicio no esta disponible.");
+                controller.alertSimple("Aviso","Por el momento el servicio no esta disponible.", serverResponse.getEstado());
             }
         }
     }

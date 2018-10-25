@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.challenge.diego.kode_challenge.R;
+import com.challenge.diego.kode_challenge.commons.Constants;
 import com.challenge.diego.kode_challenge.views.BaseActivity;
 import com.challenge.diego.kode_challenge.views.item_adapter.DeviceAdapterView;
 
@@ -64,17 +65,7 @@ public class SearchDeviceView extends BaseActivity implements SearchDeviceContra
 
     @Override
     public void infoNotSupportBluetooth() {
-        new AlertDialog.Builder(this)
-                .setTitle("Aviso")
-                .setMessage("Tu dispositivo no soporta Bluetooth")
-                .setPositiveButton("Salir", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                })
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setCancelable(false)
-                .show();
+        alertSimple("Aviso", "Tu dispositivo no soporta Bluetooth.", Constants.CODERESPONSE.ERROR);
     }
 
     @Override
@@ -132,7 +123,7 @@ public class SearchDeviceView extends BaseActivity implements SearchDeviceContra
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == presenter.REQUEST_BLUETOOTH && resultCode == RESULT_OK)
+        if (requestCode == SearchDevicePresenter.REQUEST_BLUETOOTH && resultCode == RESULT_OK)
             presenter.clickActualizar();
         else
             showNotActivateBluetooth();

@@ -23,12 +23,14 @@ public class Device {
     @NonNull
     private long mTime;
 
+    public Device(){}
+
     public Device(@NonNull final String name, @NonNull final String strength) {
         setmName(name);
         setmStrength(strength);
     }
 
-    public Device(@NonNull final String name, @NonNull final String strength, @NonNull final  String dateCreation) {
+    Device(@NonNull final String name, @NonNull final String strength, @NonNull final String dateCreation) {
         setmName(name);
         setmStrength(strength);
         setmDateCreation(dateFormatter(dateCreation));
@@ -40,7 +42,7 @@ public class Device {
         return mName;
     }
 
-    public void setmName(@NonNull final String name) {
+    private void setmName(@NonNull final String name) {
         this.mName = name;
     }
 
@@ -49,7 +51,7 @@ public class Device {
         return mStrength;
     }
 
-    public void setmStrength(@NonNull final String strength) {
+    private void setmStrength(@NonNull final String strength) {
         this.mStrength = strength;
     }
 
@@ -58,7 +60,7 @@ public class Device {
         return mDateCreation;
     }
 
-    public void setmDateCreation(@NonNull final String dateCreation) {
+    private void setmDateCreation(@NonNull final String dateCreation) {
         this.mDateCreation = dateCreation;
     }
 
@@ -67,7 +69,7 @@ public class Device {
         return mTime;
     }
 
-    public void setmTime(@NonNull long mTime) {
+    private void setmTime(@NonNull long mTime) {
         this.mTime = mTime;
     }
 

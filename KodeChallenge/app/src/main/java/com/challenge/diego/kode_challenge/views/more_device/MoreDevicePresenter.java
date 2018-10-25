@@ -4,10 +4,8 @@ import com.challenge.diego.kode_challenge.model.Device;
 import com.challenge.diego.kode_challenge.session.Session;
 import com.challenge.diego.kode_challenge.views.item_adapter.DeviceAdapterView;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 /**
  * Created by diego on 10/24/18.
@@ -36,6 +34,11 @@ public class MoreDevicePresenter implements MoreDeviceContract.Presenter {
         else if (position == 2)
             orderLast();
         setAdapter();
+    }
+
+    @Override
+    public void clickBack() {
+        view.showScreen(1);
     }
 
     private void orderFirst() {
